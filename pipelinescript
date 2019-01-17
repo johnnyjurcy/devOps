@@ -4,11 +4,13 @@ pipeline {
         stage('Build') { 
             steps { 
                 echo 'build is called' 
+                build 'dev_ops_data'
             }
         }
         stage('Test'){
             steps {
                 echo "test is called"
+                build 'dev_ops_test'
             }
         }
         stage('Deploy') {
