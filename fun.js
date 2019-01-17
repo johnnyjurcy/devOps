@@ -1,3 +1,2 @@
-app.get('/', function (req, res) {
-  res.send('Hello World')
-})
+var d=require('./app.js');
+ d.disp();
