@@ -1,0 +1,20 @@
+pipeline { 
+    agent any 
+    stages {
+        stage('Build') { 
+            steps { 
+                echo 'build is called' 
+            }
+        }
+        stage('Test'){
+            steps {
+                echo "test is called"
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo "deploye is caaled"
+            }
+        }
+    }
+}
