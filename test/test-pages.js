@@ -1,30 +1,15 @@
 var expect  = require('chai').expect;
+var d=require('../app.js');
 var request = require('request');
+var assert = require('assert');
+var res=' good morning';
 
-describe('Status and content', function() {
-    describe ('Main page', function() {
-        it('status', function(done){
-            request('http://localhost:8000/', function(error, response, body) {
-                expect(response.statusCode).to.equal(200);
-                done();
-            });
-        });
-
-        it('content', function(done) {
-            request('http://localhost:8000/' , function(error, response, body) {
-                expect(body).to.equal('Hello World');
-                done();
-            });
-        });
+  describe('checking test file', function() {
+	  
+    it('checking disp funcion', function(){
+     expect(res).to.equal(d.disp());
     });
-
-    describe ('About page', function() {
-        it('status', function(done){
-            request('http://localhost:8000/about', function(error, response, body) {
-                expect(response.statusCode).to.equal(404);
-                done();
-            });
-        });
-
-    });
-});
+	it('checking add method',function(){
+		expect(7).to.equal(d.add(3,4));
+	});
+  });
